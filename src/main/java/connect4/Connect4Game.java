@@ -1,5 +1,12 @@
 package connect4;
 
+/**
+ * Orchestrates a single Connect Four match: whose turn it is, applying a
+ * move to the {@link Board} and deciding whether the game has ended.
+ *
+ * <p>Kept free of any console I/O so the game rules can be unit tested
+ * without simulating user input.</p>
+ */
 public class Connect4Game {
 
     private final Board board = new Board();
@@ -27,6 +34,13 @@ public class Connect4Game {
         return winner != null || draw;
     }
 
+    /**
+     * Applies a move for the current player and updates game state.
+     *
+     * @param column zero-based column index
+     * @throws IllegalArgumentException if the move is illegal
+     * @throws IllegalStateException if the game is already over
+     */
     public void play(int column) {
         if (isOver()) {
             throw new IllegalStateException("Game is already over");

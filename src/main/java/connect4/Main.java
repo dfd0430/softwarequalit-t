@@ -3,6 +3,10 @@ package connect4;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Terminal entry point: reads column choices from standard input and prints
+ * the board after every move until someone wins or the board is full.
+ */
 public final class Main {
 
     private Main() {
@@ -39,6 +43,9 @@ public final class Main {
         }
     }
 
+    /**
+     * @return a zero-based column index, or -1 if the input was invalid
+     */
     private static int readColumn(Scanner scanner) {
         try {
             int column = scanner.nextInt() - 1;

@@ -1,5 +1,9 @@
 package connect4;
 
+/**
+ * The two players of a Connect Four game, each represented by a disc symbol
+ * used when the board is printed to the terminal.
+ */
 public enum Player {
     RED('X'),
     YELLOW('O');
@@ -14,6 +18,9 @@ public enum Player {
         return symbol;
     }
 
+    /**
+     * @return the player who takes the next turn
+     */
     public Player other() {
         return this == RED ? YELLOW : RED;
     }

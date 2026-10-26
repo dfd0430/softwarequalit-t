@@ -1,5 +1,13 @@
 package connect4;
 
+/**
+ * The Connect Four game board: a grid of {@link Player} discs (or empty
+ * cells) with the classic 7 columns x 6 rows dimensions.
+ *
+ * <p>The board owns all rules about where a disc may land and whether a
+ * move produces a line of four. It has no knowledge of terminal I/O so it
+ * can be tested in isolation.</p>
+ */
 public class Board {
 
     public static final int COLUMNS = 7;
@@ -8,6 +16,12 @@ public class Board {
 
     private final Player[][] cells = new Player[ROWS][COLUMNS];
 
+    /**
+     * Drops a disc for {@code player} into {@code column}.
+     *
+     * @return the row the disc landed in
+     * @throws IllegalArgumentException if the column is out of range or full
+     */
     public int drop(int column, Player player) {
         if (column < 0 || column >= COLUMNS) {
             throw new IllegalArgumentException("Column out of range: " + column);
@@ -38,6 +52,10 @@ public class Board {
         return cells[row][column];
     }
 
+    /**
+     * @return true if the last disc placed at {@code (row, column)} completes
+     *     a horizontal, vertical or diagonal line of four for its owner
+     */
     public boolean isWinningMove(int row, int column) {
         Player player = cells[row][column];
         if (player == null) {
