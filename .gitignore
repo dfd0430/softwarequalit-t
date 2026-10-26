@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Michael Dippel
+#
+# SPDX-License-Identifier: MIT
+
 # Maven build output
 target/
 

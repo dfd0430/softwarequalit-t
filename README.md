@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2026 Michael Dippel
+
+SPDX-License-Identifier: MIT
+-->
+
 # Connect Four
 
 A small terminal implementation of Connect Four in Java. Two players take
