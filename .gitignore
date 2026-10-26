@@ -1,0 +1,15 @@
+# Maven build output
+target/
+
+# Compiled class files (in case of manual javac builds)
+*.class
+out/
+bin/
+
+# IDE metadata (IntelliJ IDEA)
+.idea/
+*.iml
+
+# OS cruft
+.DS_Store
+Thumbs.db
